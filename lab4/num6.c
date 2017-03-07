@@ -1,3 +1,8 @@
+/* The goal of the following OpenMP program is to calculate π in parallel. Which
+variables are shared and which variables are private in the parallel region of 
+the program? Identify and fix all bugs in the program.
+*/
+
 #include <stdio.h> 
 #define MAX_THREADS 4 
 static long num_steps = 100000000; 
