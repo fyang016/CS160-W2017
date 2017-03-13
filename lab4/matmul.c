@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/time.h>
+#include "omp.h"
 
 #define N 1000
 
@@ -40,8 +41,11 @@ int main()
     //////////////////////////////////////////////////////////////////////////////////////
     // please change this into a parallel version
 	gettimeofday(&start, NULL);
+	#pragma omp parallel for
 	for(i = 0; i < N; i++)
+	  #pragma omp parallel for
 	  for(j = 0; j < N; j++)
+	    #pragma omp parallel for
 		for(k = 0; k < N; k++)
 		  Cp[i * N + j] += A[i * N + k] * B[k * N + j];
 	gettimeofday(&end, NULL);
