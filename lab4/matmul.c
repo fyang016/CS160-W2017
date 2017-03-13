@@ -40,10 +40,10 @@ int main()
     //////////////////////////////////////////////////////////////////////////////////////
     // please change this into a parallel version
 	gettimeofday(&start, NULL);
-	for(i=0; i<N; i++)
-	  for(j=0; j<N; j++)
-		for(k=0; k<N; k++)
-		  Cp[i*N+j]+=A[i*N+k]*B[k*N+j];
+	for(i = 0; i < N; i++)
+	  for(j = 0; j < N; j++)
+		for(k = 0; k < N; k++)
+		  Cp[i * N + j] += A[i * N + k] * B[k * N + j];
 	gettimeofday(&end, NULL);
 
 	timeCost=1000000*(end.tv_sec-start.tv_sec)+(end.tv_usec-start.tv_usec);
@@ -76,8 +76,9 @@ int main()
 int initialize(double * matrix)
 {
 	srand((unsigned)time(NULL));
-	for(int i=0; i<N; i++)
-	  for(int j=0; j<N; j++)
+	int i, j = 0;
+	for(i=0; i<N; i++)
+	  for(j=0; j<N; j++)
 	  {
 		  matrix[i*N+j]=rand()/3000.0;
 	  }
@@ -87,8 +88,9 @@ int initialize(double * matrix)
 
 int _initialize(double * matrix)
 {
-	for(int i=0; i<N; i++)
-	  for(int j=0; j<N; j++)
+	int i,j = 0;
+	for(i=0; i<N; i++)
+	  for(j=0; j<N; j++)
 	  {
 		  matrix[i*N+j]=0.0;
 	  }
