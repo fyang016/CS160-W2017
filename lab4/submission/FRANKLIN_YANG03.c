@@ -35,7 +35,7 @@ int main()
 
 	timeCost=1000000*(end.tv_sec-start.tv_sec)+(end.tv_usec-start.tv_usec);
 	timeCost/=1000000;
-    printf("The squential version of matrix multiplication costs %lf seconds\n", timeCost);
+    printf("The sequential version of matrix multiplication costs %lf seconds\n", timeCost);
 
     //////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////
